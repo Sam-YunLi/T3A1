@@ -333,3 +333,99 @@ console.log(NaN == NaN);            // false
 ## Question 9
 <!-- Explain data types, using examples from the JavaScript programming language -->
 
+The data type is how the computer stores data and how to treat them. In JavaScript, there are two categories of data types. They are Primitive data types and reference data types.
+
+### Primitive data types
+
+In JavaScript, Primitive data types are simple, they are not object dont have methods. The primitive data types are numbers, strings, booleans, null, and undefined. For the type that need to use methods JavaScript converts primitive type to object to make sure they can use methods. Like string to `String`.
+#### Number: 
+There are only one type of the number value in JavaScript, it's called number , Not like floot or integers in ruby.
+``` javascript
+console.log(typeof 888);               // 'number'
+console.log(typeof -1);                // 'number'
+console.log(typeof 0.1);               // 'number'
+console.log(typeof 0);                 // 'number'
+```
+#### String:
+We could use `""`, `''` or ` `` ` to create the string type of the data. But empety string `""` will return undefined.
+
+We can still use the `+` or ` ${} ` to manipulat string. Whenever one side of the `+`, it will convert the other side to string.
+``` javascript
+console.log(typeof 'I love my dog.');  // 'string'
+console.log("");  // undefined
+
+let name = "Alex";
+console.log(`Name is ${name}.`); // Name is Alex.
+
+console.log(typeof (4 + '5')); 
+// 4 will convert to '4' then join '4' and '5' to '45', and it's string type. Resule 'string'.
+```
+
+
+#### Boolean:
+Boolean in JS have two values: true and false. It's normally  used to determine if an operation is true or false. There are 6 false values in JavaScript : `false`, `undefined`, `0` and `-0`, `NaN`, `null` , `""`. They will automatically convert to a false boolean value when the code need to check the conditional.
+
+``` javascript
+console.log(typeof true);              // 'boolean'
+console.log(typeof false);             // 'boolean'
+
+if ('') { 
+  console.log(true);
+} else {
+  console.log(false);
+}
+// 'false'
+```
+
+#### Undefined:
+The value is undefined when the variable has not been assigned or the method's or statement's variable does not have an assigned value or the function has no value returned.
+``` javascript
+console.log(typeof undefined);         // 'undefined'
+
+let a;
+console.log(a);                        // 'undefined'
+```
+
+
+#### Null:
+`null` is primitive type. But `typeof null` will show it is object because typeof function return the object for null, we can use the flollower example.
+``` javascript
+console.log(typeof null);              // 'object'
+
+// Example:
+const countA = (string) => {
+  const num = string.match(/[a]/gi);
+  if (num === null){return 0;}
+  return m.length;
+}
+
+console.log(countA('dog'));
+// result 0 cos the 'dog'.match(/[a]/gi) === null.
+```
+
+### Reference data types
+In JavaScript, reference data types are the types dynamic, have no fixed size, and are mostly treated as objects. It includes the data types like array, function and objects.
+
+``` javascript
+a = [1,2,3];
+console.log(typeof a);                // 'array'
+
+b = (x) => x = 1;
+console.log(typeof b);                // 'function'
+
+c = {name:'alex'};
+console.log(typeof c);                // 'object'
+```
+
+Most of the reference data types in javascript have method. 
+For example:
+``` javascript
+a = [1,2,3];                      // a is array
+b = a.map((x) => x + 1);          //use map method
+console.log(b)                    // [2,3,4]
+console.log(b[0])                 // use index get the value 2.
+```
+
+## Question 10
+<!-- Explain how arrays can be manipulated in JavaScript, using examples from the JavaScript programming language -->
+
