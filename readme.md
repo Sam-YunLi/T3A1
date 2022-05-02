@@ -252,7 +252,84 @@ for( let i = 0; i < 3 ; i++ ) {
 ```
 When the `i == 1` we meet the `countinue`, the code after continue is not executed, then go to next iteration `i = 2`. 
 
+
+### Callbacks
+
+### Error handling
+
 1. https://medium.com/@rianna.cleary/control-flow-in-javascript-9c63d0c98bb9#:~:text=Control%20flow%20in%20JavaScript%20is,loops%2C%20conditionals%2C%20or%20functions.
 2. https://www.jetbrains.com/help/youtrack/devportal/Quick-Start-Guide-Workflows-JS.html#workflow-permissions
 3. https://learn.co/lessons/javascript-intro-to-flow-control
 4. https://dev.to/mugas/control-flow-in-javascript-246l
+
+
+## Question 8.
+<!-- Explain type coercion, using examples from the JavaScript programming language -->
+
+Type coercion is one kind of process that could convert one type of value to another type.
+In javascript there are three type of the conversion. 
+- to string.
+- to number.
+- to boolean.
+
+Type coercion could be Implicit or Explicit. 
+Implicit type coercion or type casting means the developer convert type of value by writing the appropriate code.
+For example:
+``` javascript
+console.log(typeof Number("888")); // 888 => 'number'
+console.log(typeof String(12345)); // '12345' => 'string'
+console.log(typeof Boolean(0)); // false => 'boolean'
+```
+Explicit type coercion means in some situaction the type of value could change automatically, it's normally happens when apply operators to values of different types.
+``` javascript
+const x = 4 / '5'; 
+console.log(x); // 0.8
+console.log(typeof x); // 'number'
+// String '5' convert to number 5, without use Number('5').
+
+console.log('Hi.' + 5); // 'Hi. 5'
+// Number 5 convert to string '5'.
+
+let zero = 0 ? true: false;
+console.log(let); // false
+// Number 0 convert to boolean false.
+```
+
+There are only have 6 false values in JavaScript.
+``` javascript
+console.log(Boolean(''));          // false
+console.log(Boolean(0));           // false Boolean(-0) is false as well
+console.log(Boolean(NaN));         // false
+console.log(Boolean(null));        // false
+console.log(Boolean(undefined));   // false
+console.log(Boolean(false));       // false
+```
+All the other value that not belong to these 6 will converted to true, including object, function, array etc.
+``` javascript
+console.log(Boolean({});            // true
+console.log(Boolean([]));           // true
+console.log(Boolean(function() {}));// true
+```
+
+There are some special cases:
+- `==` and `!=` will only check the value but not the type, JS will try to convert the type and compair them.
+- `===` and `!==` check both value and type.
+- when `null` or `undefined` on the side of the `==`, they not convert `null` or `undefined` to number. `null` only equals to `null` or `undefined`.
+- `NaN` does not equal to anything even it self.
+``` javascript
+console.log(5 == '5');              // true
+console.log(5 === '5');             // false
+
+console.log(Number(null));          // 0
+console.log(null == 0);             // false
+console.log(undefined == null);     // true
+
+console.log(NaN == NaN);            // false
+```
+
+1. https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/
+
+
+## Question 9
+<!-- Explain data types, using examples from the JavaScript programming language -->
+
