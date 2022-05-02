@@ -1,4 +1,4 @@
-### Question 1
+## Question 1
 <!-- Provide an overview and description of a standard source control process for a large project -->
 <!-- Provides an extensive overview and description of a standard source control process -->
 
@@ -25,7 +25,7 @@ By understanding how the Source Control flow works on the large project. There a
 
 
 
-### Qustion 2
+## Qustion 2
 <!-- What are the most important aspects of quality software? -->
 <!-- List discuss and demonstrate 6 software quality characteristics.
 Shows almost flawless understanding of the high level structure of the app -->
@@ -65,75 +65,194 @@ Software quality is a concern of both users and developers, but it is not easy t
 3. https://www.softwaretestinghelp.com/what-are-the-quality-attributes/
 
 
-### Question 7
+## Question 7
 <!-- Explain control flow, using an example from the JavaScript programming language -->
 <!-- Provides a thorough explanation of control flow in programming -->
 Control flow is the order or sequence of execution in a programming language. Like other programming languages, control flow is an integral part of JavaScript, and it relies heavily on control flow to take actions based on situations or conditions.
 
-#### Conditionals
+### Conditionals
 When you need to performance different actions based on different conditions, you will need the conditional statements. in JS we have IF ELSE and switch conditional statements
-##### if/ if else/ if else if else
-If else statement is simple, when the condition after if is true, then the code in `{}` will be executed, if the conditional is false then the code after if will be pass, then the code after else will be executed.
-For example:
-- if
-    ``` javascript
-    const a = 2;
-    if (a > 0) {
-        console.log('a is bigger than 0');
-    }
+#### if/ if else/ if else if else
+If else statement is simple, when the condition after if is true, then the code in `{}` will be executed, if the conditional is false then the code after if will be pass, then the code after else will be executed. For example:
 
-    if (a < 0) {
-        console.log('a is smaller than 0');
-    }
-    
-    // result: a is bigger than 0
-    ```
-    In this example the first condition `(a > 0)` is true, so the code in `{console.log('a is bigger than 0');}` will be executed, but the second condition `(a < 0)` is false, so the code in `{console.log('a is smaller than 0');}` will be passed. so the result is `a is bigger than 0`.
+- if
+``` javascript
+const a = 2;
+if (a > 0) {
+    console.log('a is bigger than 0');
+}
+
+if (a < 0) {
+    console.log('a is smaller than 0');
+}
+
+// result: a is bigger than 0
+```
+In this example the first condition `(a > 0)` is true, so the code in `{console.log('a is bigger than 0');}` will be executed, but the second condition `(a < 0)` is false, so the code in `{console.log('a is smaller than 0');}` will be passed. so the result is `a is bigger than 0`.
 
 - if else
-    ``` javascript
-    const a = 2;
-    const b = 3;
+``` javascript
+const a = 2;
+const b = 3;
 
-    if (a > b) {
-        console.log('a > b is true')
-    } else {
-        console.log('a > b is false')
-    }
-    //result:  a > b is false
-    ```
-    Because the `(a > b)` condition is false so the code `{ console.log('a > b is true') }` will be passed and the code after `else` `{console.log('a > b is false')}` will be executed. So the result will be `a > b is false`
+if (a > b) {
+    console.log('a > b is true')
+} else {
+    console.log('a > b is false')
+}
+//result:  a > b is false
+```
+Because the `(a > b)` condition is false so the code `{ console.log('a > b is true') }` will be passed and the code after `else` `{console.log('a > b is false')}` will be executed. So the result will be `a > b is false`
 
 - if else if else
-    ``` javascript
-    const a = 2;
-    const b = 3;
-    const c = 4;
+``` javascript
+const a = 2;
+const b = 3;
+const c = 4;
 
-    if (a > b) {
-        console.log('a > b')
-    } else if (b > c) {
-        console.log('b > c')
-    } else {
-        console.log ('none of them is right')
-    }
-    //result: none of them is right
-    ```
-    In this example the condition `(a > b)` is false so move to the `else if `check the condition `(b > c)` , this conditon false as well, so move to the `else`, the code `{console.log ('none of them is right')}`  will be executed. So the result is `none of them is right`.
+if (a > b) {
+    console.log('a > b')
+} else if (b > c) {
+    console.log('b > c')
+} else {
+    console.log ('none of them is right')
+}
+//result: none of them is right
+```
+In this example the condition `(a > b)` is false so move to the `else if `check the condition `(b > c)` , this conditon false as well, so move to the `else`, the code `{console.log ('none of them is right')}`  will be executed. So the result is `none of them is right`.
 
-#### switch
+### switch
 Switch statement works with conditional aswell, but unlike the if else statement, switch statement take in an expression  and evaluates it once. If any of the preceding cases match the expression, then the code in that expression will be excuted.
 
+``` javascript
+const day = new Date().getDay();
 
+switch (day)) {
+  case 1:
+    console.log('Today is Monday.');
+    break;
+  case 2:
+    console.log('Today is Tuesday.');
+    break;
+  case 3:
+    console.log('Today is Wednesday.');
+    break;
+  case 4:
+    console.log('Today is Thursday.');
+    break;
+  case 5:
+    console.log('Today is Friday.');
+    break;
+  default:
+    text = "It's Weekend.";
+}
+```
 
-loop 
+In this example, the `day` will give a number from 0 to 6, means Sunday to Saturday. Switch statement take expression `day`, for example the today is monday so the day will be 1, then match the second case, then excute the code after the second case. Until meet the `break` jump out from the switch statement or finish this switch statement.
 
-break
-return
-continue
+### loop
+A loop statement is an iteration statement, it will keep running until the condition fails or nothing is left to loop.
+in JS we have for loop and while loop.
 
+### for loop
+The for loop statement will have an conditional, the loop will keep executing until the condition is false.
 
-try catch
+``` javascript
+const pets = ['dog','cat','fish'];
 
-function
+for (let i = 0 ; i < pets.length ; i++) {
+  console.log('My pet is ' + pets[i]);
+}>)
 
+// My pet is dog
+// My pet is cat
+// My pet is fish
+```
+In this example, we set the `i = 0` first, then check the condition `i < pets.length` is true, so the loop will run then we print the `my pet is dog`. After the code in the block excuted, `i++` excuted. then we check the condition again. This will keep run until the condition `i < pets.length` is false.
+
+The two special way to use the for loop is for/in and for/of. Normally they used with the object or array. 
+for/in is loop the properties of an object (keys).
+for/of is loops the values of an iterable object (values).
+They will running to the end of the object or array.
+for example:
+``` javascript
+const peoples = { name: 'Alex', nickname: 'Big rock', age: 18}
+let keys = [];
+let values = [];
+
+for (let key in peoples) {
+  keys.push(key);
+}
+console.log(keys);
+
+// ['name', 'nickname', 'age']
+
+for (let value of peoples) {
+  values.push(value);
+}
+console.log(values);
+
+// ['Alex','Big rock', 18]
+```
+
+### while loop
+While loop is really similar to the for loop, the loop will keep run until the contional is false.
+
+``` javascript
+const pets = ['dog','cat','fish'];
+
+while (pets.length > 0) {
+  const pet = pets.pop();
+  console.log('My pet is ' + pet);
+})
+
+// My pet is fish
+// My pet is cat
+// My pet is dog
+```
+In this example, we can see that the while loop is really like the for loop, each time in the loop will pop out one of the element. The loop will keep running until the `pets.length > 0` false.
+
+``` javascript
+const pets = ['dog','cat','fish'];
+
+do {
+  const pet = pets.pop();
+  console.log('My pet is ' + pet);
+}) while (pets.length <= 0);
+
+// My pet is fish
+// My pet is cat
+// My pet is dog
+```
+do/while loop is same with the while. only different is the code will run once then check the condition, if the condition is true, keep looping, if the condition is false, break the loop. for example:
+
+### break
+Break could jump out from the loop, without check the condition.
+for example:
+``` javascript
+for( let i = 0; i < 3 ; i++ ) {
+  if ( i == 1 ) { break; }
+  console.log( i );
+}
+
+// 0
+```
+When the `i == 1` we meet the `break`, it will jump out from the for loop.
+
+### continue
+Continue breaks one iteration then continue the next iteration.
+``` javascript
+for( let i = 0; i < 3 ; i++ ) {
+  if ( i == 1 ) { continue; }
+  console.log( i );
+}
+
+// 0
+// 2
+```
+When the `i == 1` we meet the `countinue`, the code after continue is not executed, then go to next iteration `i = 2`. 
+
+1. https://medium.com/@rianna.cleary/control-flow-in-javascript-9c63d0c98bb9#:~:text=Control%20flow%20in%20JavaScript%20is,loops%2C%20conditionals%2C%20or%20functions.
+2. https://www.jetbrains.com/help/youtrack/devportal/Quick-Start-Guide-Workflows-JS.html#workflow-permissions
+3. https://learn.co/lessons/javascript-intro-to-flow-control
+4. https://dev.to/mugas/control-flow-in-javascript-246l
