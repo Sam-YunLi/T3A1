@@ -746,3 +746,37 @@ console.log(Object.values(obj));
 ## Question 12
 <!-- Explain how JSON can be manipulated in JavaScript, using examples from the JavaScript programming language -->
 
+JavaScript Object Notation (JSON) is a syntax for serializing data, this data could be any data type. JSON is a kind of the data inerchange format and based on JavaScript syntax, but it is language independent. JSON format is text only, self-describing and easy to understand.
+
+JSON Syntax Rules 
+  - "Name" `:` "value" pairs
+  - Separated by commas `,`
+  - Object enclosed in Curly braces `[]`
+  - Object enclosed in Square brackets `{}`
+
+We can find out this syntax rule is really close to the javascript object syntax rule, so the javascript program can easily convert JSON to JavaScript object.
+``` javascript
+{"firstName":"Sam", "lastName":"Li", "address":{"state":"VIC", "city":"Mel"}, "array":["1","2"]}
+// JSON file will look like this
+```
+### `JSON.parse()`
+`JSON.parse()` method used to converting from JSON format string to JavaScript Object. For example:
+``` javascript
+const jsonText = '{"firstName":"Sam", "lastName":"Li", "address":{"state":"VIC", "city":"Mel"}, "array":["1","2"]}';
+console.log(JSON.parse(jsonText));
+// {firstName: 'Sam', lastName: 'Li', address: { state: 'VIC', city: 'Mel' }, array: [ '1', '2' ]}
+```
+### `JSON.stringify()`
+`JSON.stringify()` method use to convert javascript object or value to JSON format string. For example:
+``` javascript
+console.log(JSON.stringify({ a: 1, b: 2 }));
+// '{"a":1,"b":2}'
+```
+
+1. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON
+2. https://www.digitalocean.com/community/tutorials/how-to-work-with-json-in-javascript
+3. https://www.w3schools.com/js/js_json.asp
+
+## Question 13
+<!-- For the code snippet provided below, write comments for each line of code to explain its functionality. In your comments you must demonstrates your ability to recognise and identify functions, ranges and classes -->
+
