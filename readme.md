@@ -426,6 +426,217 @@ console.log(b)                    // [2,3,4]
 console.log(b[0])                 // use index get the value 2.
 ```
 
+1. https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0#:~:text=Javascript%20has%203%20data%20types,Array%20%2C%20Function%20%2C%20and%20Object%20.
+2. https://www.freecodecamp.org/news/primitive-vs-reference-data-types-in-javascript/
+3. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined
+
 ## Question 10
 <!-- Explain how arrays can be manipulated in JavaScript, using examples from the JavaScript programming language -->
 
+Array in JavaScript is an object can store multiple elements. The element could be any type of data.
+``` javascript
+cost newArray = [
+  0,                                      // number
+  false,                                  // boolean
+  [1, 2],                                 // array
+  'string',                               // string
+  {name: 'Alex'},                         // object
+  function hi() {console.log('hello')}    // function
+];
+```
+
+### Create an new array.
+Array could be created by use `[]`. Another way to create an array is use `new Array()` beacuse array is an object in javascript.
+
+``` javascript
+const fruits = ['apple','banana','orange','pear'];
+const numbers = new Array(1, 2, 3);
+const emptyArray = [];
+
+console.log(fruits);     // ['apple','banana','orange','pear']
+console.log(numbers);    // [1, 2, 3]
+console.log(emptyArray); // []
+```
+
+### Access elements
+Because the array have the index, we could use the index to access the elements in the array. Index start from 0. For example:
+``` javascript
+const fruits = ['apple','banana','orange','pear'];
+console.log(fruits[0]);
+// 'apple'
+```
+
+### Add Element
+Thtere are some way to add elements to the existing array. `push()` and `unshift()` are the build-in methods to add elements to array.
+`push()` add element at the end of the array.
+`unshift()` add element at the front of the array.
+for example
+``` javascript
+let fruits = ['banana','orange'];
+
+fruits = fruits.push('pear');
+console.log(fruits);     
+// ['banana','orange','pear']
+
+fruits = fruits.unshift('apple');
+console.log(fruits);     
+// ['apple','banana','orange','pear']
+```
+
+We could also add element by accesing the index value.
+``` javascript
+let fruits = ['banana','orange'];
+
+fruits[2] = ('pear');
+console.log(fruits);     
+// ['banana','orange','pear']
+
+fruits[4] = unshift('apple');
+console.log(fruits);     
+// ['apple','banana','orange', undefine, 'pear']
+// fruits[3] is undefined cos we didn't define the value of index 3.
+```
+
+### Change the elements
+We could use the index to change the element value. But
+``` javascript
+let fruits = ['banana','orange'];
+
+fruits[1] = ('apple');
+console.log(fruits);     
+// ['banana','apple']
+// fruits[1] value is change to 'apple'
+```
+
+### Remove an element
+We could use `pop()` and `shift()` menthod to remove the element and return the value. 
+`pop()` remove element at the end of the array and return the value. .
+`shift()` remove element at the front of the array and return the value.
+for example
+``` javascript
+let fruits = ['apple','banana','orange','pear'];
+
+firstFruit = fruits.shift();
+console.log(firstFruit);      // 'apple'
+console.log(fruits);   
+// ['banana','orange','pear']
+
+lastFruit = fruits.pop();
+console.log(lastFruit);       // 'pear'
+console.log(fruits);    
+// ['banana','orange']
+```
+
+### `Array.length`
+This one will return the length of the array. Return value is number.
+``` javascript
+let fruits = ['apple','banana','orange','pear'];
+console.log(fruits.length);  
+// 4
+```
+
+### Array methods
+### `Array.concat()`
+`Array.concat()` will join the arrays together and return the result. It could be two or more arrays. for example:
+``` javascript
+let a = [1, 2, 3];
+let b = ['a'];
+let c = [4, 5, 6];
+console.log(a.concat(b,c)); 
+// [ 1, 2, 3, 'a', 4, 5, 6]
+```
+
+### `Array.indexOf()`
+`Array.indexOf()` method search the value of the element and return the index. for example:
+``` javascript
+let fruits = ['apple','banana','orange','pear'];
+console.log(fruits.indexOf('apple'));      
+// 0
+```
+
+### `Array.find()`
+`Array.find()` method searth the array from beginning and return the first value that match the given condition. for example:
+``` javascript
+let numbers = [1,3,10,6,2];
+console.log(numbers.find(x => x > 5));      
+// 10
+```
+### `Array.findIndex()`
+`Array.findIndex()` method is really close to the `Array.find()` method but returns the index of the first value instead the value.
+``` javascript
+let numbers = [1,3,10,6,2];
+console.log(numbers.findIndex(x => x > 5));      
+// 2
+```
+
+### `Array.forEach()`
+`Array.forEach()` method call a function to each of the elements. This method not change the original array and not return anything.
+``` javascript
+let a = [1, 2, 3];
+console.log(a.forEach(o => o + 1)); 
+// undefined  cos forEach not return anything.
+let b = [];
+a.forEach(o => b.push(o + 1));
+console.log(b);
+// [2, 3, 4]  forEach run function for every elements in Array a.
+```
+
+### `Array.map()`
+`Array.map()` method is really like the `forEach()` method, but map will return an new array. for example:
+``` javascript
+let a = [1, 2, 3];
+console.log(a.map(o => o + 1)); 
+// [2, 3, 4]
+```
+
+### `Array.reduce()`
+`Array.reduce()` methoed will run the callback function with the use passed first initial value for the first each elements in the array and return the value pass to the callback function as the new initial value for the next element until the end of the array. for example:
+``` javascript
+let a = [1, 2, 3];
+let sum = a.reduce((sum , x) => sum + x, 0);
+// 0 is the initial value, will pass to the callback function as sum 
+// x will be the frist element of the array 1 
+// the function will return `0+ 1` as the new initial value sum 
+// and the second element `2` as x ...
+// until the end of the array.
+console.log(sum); 
+// 6
+```
+
+
+### `Array.includes()`
+`Array.includes()` method check the array contains element or not. This method will return an boolean value. for example:
+``` javascript
+let fruits = ['apple','banana','orange','pear'];
+console.log(fruits.includes('apple'));   // true
+console.log(fruits.includes('egg'));     // false
+```
+
+### `Array.sort()`
+`Array.sort()` method will sort the elements alphabetically in strings and in ascending order
+``` javascript
+let fruits = ['pear', 'banana', 'apple', 'orange'];
+console.log(fruits.sort());
+// ['apple','banana','orange','pear']
+```
+
+### `Array.slice()`
+`Array.slice()` method selects the part of an array and return the new array. The Syntax is slice() , slice(strat) and slice(start, end). All of the posion could use `-` count from right, `-1` is the last element.
+For example:
+``` javascript
+let fruits = ['pear', 'banana', 'apple', 'orange'];
+console.log(fruits.slice());      // return an new array
+// ['pear', 'banana', 'apple', 'orange']
+console.log(fruits.slice(1));     // start index 1.
+// ['banana', 'apple', 'orange']
+console.log(fruits.slice(1, 2));  // start index 1 end index 2
+// ['banana', 'apple']
+console.log(fruits.slice(-2));    // start from the second last element
+// ['apple', 'orange']
+console.log(fruits.slice(1, -2)); // start index end the second last element
+// ['banana', 'apple']
+```
+
+1. https://www.programiz.com/javascript/array
+2. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+3. https://javascript.info/array
