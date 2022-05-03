@@ -527,7 +527,7 @@ console.log(fruits);
 // ['banana','orange']
 ```
 
-### `Array.length`
+### `.length()`
 This one will return the length of the array. Return value is number.
 ``` javascript
 let fruits = ['apple','banana','orange','pear'];
@@ -536,8 +536,8 @@ console.log(fruits.length);
 ```
 
 ### Array methods
-### `Array.concat()`
-`Array.concat()` will join the arrays together and return the result. It could be two or more arrays. for example:
+### `.concat()`
+`.concat()` will join the arrays together and return the result. It could be two or more arrays. for example:
 ``` javascript
 let a = [1, 2, 3];
 let b = ['a'];
@@ -546,31 +546,31 @@ console.log(a.concat(b,c));
 // [ 1, 2, 3, 'a', 4, 5, 6]
 ```
 
-### `Array.indexOf()`
-`Array.indexOf()` method search the value of the element and return the index. for example:
+### `.indexOf()`
+`.indexOf()` method search the value of the element and return the index. for example:
 ``` javascript
 let fruits = ['apple','banana','orange','pear'];
 console.log(fruits.indexOf('apple'));      
 // 0
 ```
 
-### `Array.find()`
-`Array.find()` method searth the array from beginning and return the first value that match the given condition. for example:
+### `.find()`
+`.find()` method searth the array from beginning and return the first value that match the given condition. for example:
 ``` javascript
 let numbers = [1,3,10,6,2];
 console.log(numbers.find(x => x > 5));      
 // 10
 ```
-### `Array.findIndex()`
-`Array.findIndex()` method is really close to the `Array.find()` method but returns the index of the first value instead the value.
+### `.findIndex()`
+`.findIndex()` method is really close to the `.find()` method but returns the index of the first value instead the value.
 ``` javascript
 let numbers = [1,3,10,6,2];
 console.log(numbers.findIndex(x => x > 5));      
 // 2
 ```
 
-### `Array.forEach()`
-`Array.forEach()` method call a function to each of the elements. This method not change the original array and not return anything.
+### `.forEach()`
+`.forEach()` method call a function to each of the elements. This method not change the original array and not return anything.
 ``` javascript
 let a = [1, 2, 3];
 console.log(a.forEach(o => o + 1)); 
@@ -581,16 +581,16 @@ console.log(b);
 // [2, 3, 4]  forEach run function for every elements in Array a.
 ```
 
-### `Array.map()`
-`Array.map()` method is really like the `forEach()` method, but map will return an new array. for example:
+### `.map()`
+`.map()` method is really like the `forEach()` method, but map will return an new array. for example:
 ``` javascript
 let a = [1, 2, 3];
 console.log(a.map(o => o + 1)); 
 // [2, 3, 4]
 ```
 
-### `Array.reduce()`
-`Array.reduce()` methoed will run the callback function with the use passed first initial value for the first each elements in the array and return the value pass to the callback function as the new initial value for the next element until the end of the array. for example:
+### `.reduce()`
+`.reduce()` methoed will run the callback function with the use passed first initial value for the first each elements in the array and return the value pass to the callback function as the new initial value for the next element until the end of the array. for example:
 ``` javascript
 let a = [1, 2, 3];
 let sum = a.reduce((sum , x) => sum + x, 0);
@@ -604,24 +604,24 @@ console.log(sum);
 ```
 
 
-### `Array.includes()`
-`Array.includes()` method check the array contains element or not. This method will return an boolean value. for example:
+### `.includes()`
+`.includes()` method check the array contains element or not. This method will return an boolean value. for example:
 ``` javascript
 let fruits = ['apple','banana','orange','pear'];
 console.log(fruits.includes('apple'));   // true
 console.log(fruits.includes('egg'));     // false
 ```
 
-### `Array.sort()`
-`Array.sort()` method will sort the elements alphabetically in strings and in ascending order
+### `.sort()`
+`.sort()` method will sort the elements alphabetically in strings and in ascending order
 ``` javascript
 let fruits = ['pear', 'banana', 'apple', 'orange'];
 console.log(fruits.sort());
 // ['apple','banana','orange','pear']
 ```
 
-### `Array.slice()`
-`Array.slice()` method selects the part of an array and return the new array. The Syntax is slice() , slice(strat) and slice(start, end). All of the posion could use `-` count from right, `-1` is the last element.
+### `.slice()`
+`.slice()` method selects the part of an array and return the new array. The Syntax is slice() , slice(strat) and slice(start, end). All of the posion could use `-` count from right, `-1` is the last element.
 For example:
 ``` javascript
 let fruits = ['pear', 'banana', 'apple', 'orange'];
@@ -640,3 +640,109 @@ console.log(fruits.slice(1, -2)); // start index end the second last element
 1. https://www.programiz.com/javascript/array
 2. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 3. https://javascript.info/array
+
+## Question 11
+<!-- Explain how objects can be manipulated in JavaScript, using examples from the JavaScript programming language -->
+
+In JavaScript, Object is a kind of non-primitive data type, This data type will allow you to store multiple collections of data. The syntax to declare an object is `obj_name = { key: value , key: value , ...}`, each of the `key: value` pair(property) is one of the member separated by commas and all of the properties are enclosed in curly braces `{}`. For example:
+``` javascript
+const person = { firstName: 'Sam', age: 33 };
+// obj_name = { key: value , key: value , ...}
+```
+
+If we want to access the property, we can use the key to access the value of the property. We can use dot notation or the bracket notation.
+We can change the value of the property when we accessing by the key.
+``` javascript
+const person = { name: 'Sam', age: 33 };
+console.log(person.name); // 'Sam'
+console.log(person['age']); // 33
+
+person.name = 'Alex'
+console.log(person.name); // 'Alex'
+```
+
+Object can contains all kind of the properties, even another object or function.
+When we want use the function stored in an object the parentheses `()` cannot be omitted, even there is no parameters. And we can use `this` to call the property whith in this object. This function could be called menthod of this object.
+``` JavaScript
+const person = { 
+  name: 'Sam', 
+  age: 33,
+  address: {state: 'Vic', city: 'Mel'},
+  sayHi: function() {console.log('Hello '+ this.name)}
+};
+
+console.log(person.address.state)  // 'Vic'
+person.sayHi()                     // 'Hello Sam'
+```
+
+We can create the Object as the 'blueprint' (object constructor function) for create many other object with the same 'type'. For example:
+``` javascript
+function Student(name, id){
+  this.name = name;
+  this.id = id;
+}
+student1 = new Student('Sam', 1);
+student2 = new Student('Yun', 2);
+console.log(student1.id + '. ' + student1.name); // 1. Sam
+console.log(student2.id + ' ' + student2.name);  // 2. Yun
+```
+If we want add new property or method to the created object we could use the following syntax ` objectName.newPropertyKey = newPropertyValue`. 
+If we cant add new property or method to the object constructor function we could use the `prototype`, syntax is `FunctionName.prototype.newPropertyKey = newPropertyValue`. For example:
+``` javascript
+function Person = { 
+  this.firstName  = firstName;
+  this.lastName  = lastName;
+}
+sam = new Person('Sam', 'Li');
+sam.age = 33;
+console.log(sam.age)   // 33
+
+Person.prototype.fullName = function(){
+  return this.firstName + ' ' + this.lastName
+} 
+kha = new Person('Kha','Phan');
+console.log(kha.fullName()) // Kha Phan
+console.log(sam.fullNmae()) // Sam Li
+```
+
+### Method
+
+### `Object.assign()`
+`Object.assign()` method copy all the properties from one or more objects to target object. It will return the target object that been modified.
+``` javascript
+const obj1 = {x: 1, y: 2};
+const obj2 = {y: 3, z: 4};
+console.log(Object.assign(obj1,obj2)); // {x:1, y:3, z:4} 
+```
+In this example, the property `y` value been modified from the `obj2` to the target object `obj1`, so the value is `3`.
+
+### `Object.entries()`
+`Object.entries()` method returns an array , each of the element is the an array `[key, value] `.
+``` javascript
+const obj = { a: 'b', c: 1 };
+console.log(Object.entries(obj));
+// [ [ 'a', 'b' ], [ 'c', 1 ] ]
+```
+
+### `Object.keys()`
+`Object.keys()` method returns an array of the property names.
+``` javascript
+const obj = { a: 'b', c: 1 };
+console.log(Object.keys(obj));
+// ['a', 'c']
+```
+
+### `Object.values()`
+`Object.values()` method returns an array of the property value.
+``` javascript
+const obj = { a: 'b', c: 1 };
+console.log(Object.values(obj));
+// ['b', 1]
+```
+
+1. https://www.programiz.com/javascript/object
+2. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+## Question 12
+<!-- Explain how JSON can be manipulated in JavaScript, using examples from the JavaScript programming language -->
+
