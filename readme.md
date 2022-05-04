@@ -780,3 +780,87 @@ console.log(JSON.stringify({ a: 1, b: 2 }));
 ## Question 13
 <!-- For the code snippet provided below, write comments for each line of code to explain its functionality. In your comments you must demonstrates your ability to recognise and identify functions, ranges and classes -->
 
+
+``` javascript
+// create class called `Car`
+class Car { 
+  // initializes objects by pass `brand` as the parameter when create new Car object.
+  constructor(brand) { 
+    // Use `this` as the object itself, create an variable called `carname` and assign this variable by the parameter 'brand'.
+    this.carname = brand; 
+  // finish initializes function
+  }
+  // Create a function (method) called `present`, Because `()` dont have any  parameters in it, so when we use this function we dont need pass any parameters into this funciton.
+  present() { 
+    // return an string gouped by 'I have a ' static part and `this.carname` variable by use `+`. Because we function buind in the object we can use `this` to call any variable or function in this object.
+    return 'I have a ' + this.carname; 
+  // close `present()` function
+  }
+// close class `Car` 
+}
+
+// Creat class called `Model` and it inherits from class `Car` which means all the variable and method from class `Car` will be inherited to class `Model`.
+class Model extends Car {
+  // initializes objects by pass `brand` and `mod` as the parameters when create new Model object
+  constructor(brand, mod) {
+    // The first parameter will be 'brand'.
+    // Because class `Model` is inherited from class `Car` so it will inherits the constructor function from class `Car`.
+    // By use the key word `super` we can call the parent constructor function and pass a parameter 'brand'.
+    // So class `Model` have the variable called `carname` and assign the value as `brand`.
+    super(brand);
+    //  Create an variable called `model` and assign this variable by the parameter 'brand'.
+    this.model = mod;
+  // finish initializes function
+  }
+  // Create a function (method) called `show`
+  show() {
+     // Because class `Model` is inherited from class `Car`, so class `Car` inherits all the function(method) from his parent class `Model`. That mean the function `present()` is inherited.
+     // By use `this` keyword to callback owned function `present()`, and get the return value.
+     // Use  value `+` string `+` owned variable `model` value. Implicit converse all the values to an string value and retrun it.
+     // The return value should be `"carname", it was made in "model"`
+    return this.present() + ', it was made in ' + this.model;
+  // close `show()` function 
+  }
+// close class `Model`
+}
+
+// Declare an new array called `makes` and assign the value as `["Ford", "Holden", "Toyota"]
+// Because it used `let` keyword so array `makes` is block-scoped local variable, and it can be updated but not re-declared.
+let makes = ["Ford", "Holden", "Toyota"] 
+
+//  Use `new Array(40)` created an new array with the length is 40, and all the values is undefined.
+//  Because this array is the first parameter of the `Array.from()` function, and we know the `Array.from()`function syntax is ` Array.from(array, (element, index) => {} )`. So `x` is the element of the first parameter array, and `i` is the index of the first parameter array. Each of the element is added with `1980` and his index, so the array should be [1980, 1981...2019].
+// `Array.from` return an new array, so here we pass the result of `Array.from()` to an new variable called 'models'. 
+let models = Array.from(new Array(40), (x,i) => i + 1980)
+
+// Create a function called `randomIntFromInterval` and this function take at least two parameters. 
+// The first parameter will be declared as name `min`, the second parameter will be declared as name `max`
+function randomIntFromInterval(min,max) {
+    // `Math.random()` will return a random number from 0 to 1 (inclusive of 0, but not 1).
+    // Times `*` this value with `max-min+1` the value range will be `0` to `max-min+1`  (inclusive of 0, but not `max-min+1`)
+    // Add `+` min so the range of the value will be `min` to `max+1` (inclusive of `min`, but not `max+1`)
+    // `Math.floor()` will return the integer part of the value so the range will become form `min` to `max`(both inclusive), and the value is number only have the integer part.
+    return Math.floor(Math.random()*(max-min+1)+min);
+
+// close function `randomIntFromInterval`
+}
+
+// Start a for loop. Because the `models` is an array and use the `for...of`, So it will loop every element of array `models`, and each time of the element will been assign by an element of the array from start to end.
+for (model of models) {
+
+  // Declare an variable called `make` and assigned by one of the element of array `makes`, the value in the `[]` will take a number value as the index of the array. The index is the result of function `randomIntFromInterval()` and pass the first parameter as 0, second parameter as `makes.length-1`.
+  // `array.length()` will return the length of the array, because the index of array start from 0 not 1 , so the reasonable index will be from 0 to `makes.length-1`.
+  // `randomIntFromInterval` will return a random number between 0 and `makes.length-1`, as the index of the array `makes`.
+  make = makes[randomIntFromInterval(0,makes.length-1)]
+
+
+  // Declare an variable called `model` and assigned by one of the element of array `models`, the index will be the random number between 0 and `models.length-1`
+  model = models[randomIntFromInterval(0,models.length-1)]
+
+  // Create an new class object `mycar` by use class `Model` and pass two parameters, first parameter will be variable `make`, second variable `model`. By use this two parameters we can initializes `mycar`, so `mycar.brand = make(first prameter)` and `mycar.model = model(second prameter)`.
+  mycar = new Model(make, model);
+  // callback the function '.show()` from object `mycar`. The result will be `make, it was made in model`. Pass this string result to the WebAPI funciton `console.log()`. 
+  // `console.log()` function print the result to the screen or the console
+  console.log(mycar.show())
+}
+```
