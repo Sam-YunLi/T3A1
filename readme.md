@@ -64,6 +64,96 @@ Software quality is a concern of both users and developers, but it is not easy t
 2. https://www.silasreinagel.com/blog/2016/11/15/the-seven-aspects-of-software-quality/
 3. https://www.softwaretestinghelp.com/what-are-the-quality-attributes/
 
+## Question 3
+<!-- Outline a standard high level structure for a MERN stack application and explain the components -->
+
+MERN stands for MongoDB, Express, React and Node.js, The amalgamation of these technologies is called MERN stack. By use MERN stack, the developer could create whole websites(back-end, front-end and database). Deverloper could easily build the website by only use Javascript.
+- MongoDB - document-oriented NoSQL database
+- Express.js - Node.js web application framework
+- React.js   - JavaScript library for building user interfaces
+- Node.js - Platforms server environment
+
+![](./src/mern.png)
+From this image, we could easily separated the web application development into three tiers, which is Font-end, Back-end and database.
+### Font-end - React.js
+In MERN stack, React.js is used for the top tier Font-end, this tier will show basiclly everthing that user could see. React.js is a JavaScript framwork that use to create dynamic clientside application in HTML. React.js allows developers to build up complex interface by use simple components, and connect to the back-end servers get data from back-end, render to HTML. React.js have great support for events, errors, lists, forms and others. This make developer write their code faster and use less code.
+
+### Back-end - Express.js and Node.js
+In MERN stack, Express.js and Node.js used for the back-end or service side. 
+Node.js is a JavaScript runtime environment, used to execute JavaScript code outside of the browser. it can run on most of the platforms like windows, Mac OS, Linux, etc. Node.js use event-driven, non-blocking I/O model, because of that node.js is really good to use for for data-intensive real-time applications that run across different devices. 
+Express.js is web application framework for Node.js. it not just simplifies the development, but also make the code writing more secure, modelar and faster.
+
+### Database - MongoDB
+In MERN stack, MongoDB handle our database. MongoDB is a non-relational, document-oriented database. MongoDB is really powerful in MERN because the way it sotre data in JSON documents alongside dynamic schemas. This work in tandem with the front end, any JSON file creadted in React.js can be sen through the Express.js server, could send to MongoDB directly.
+
+1. https://www.geeksforgeeks.org/mern-stack/
+2. https://www.mongodb.com/mern-stack
+3. https://www.bocasay.com/what-is-the-mern-stack/
+4. https://www.w3schools.com/nodejs/nodejs_intro.asp
+
+## Question 4
+<!-- A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project? -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Question 5
+<!-- With reference to one of your own projects, discuss what knowledge or skills were required to complete your project, and to overcome challenges -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Question 6
+<!-- With reference to one of your own projects, evaluate how effective your knowledge and skills were for this project, and suggest changes or improvements for future projects of a similar nature. -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Question 7
 <!-- Explain control flow, using an example from the JavaScript programming language -->
