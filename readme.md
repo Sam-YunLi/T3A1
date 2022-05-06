@@ -12,18 +12,16 @@ By understanding how the Source Control flow works on the large project. There a
 
 3. After all work has been assigned, each developer will copy or clone the repository code to their local machine, so they can do their work locally instead of the main branch, which will give developers enough freedom to additions or modifications, and the integrity of the source code are preserved.
 
-4. Once the developer finish their part, they can submit their change to the main branch and 
+4. Once the developer finish their part, they can submit their change to the main branch and create an pull request.
 
+5. The admin team will review the changes and make sure they don't influence other features. Then they can commit the changes and merge to the main branch. Otherwise they will reject the changes and tell the developer to check the code until there is no influence to merge.
 
+6. After the main branch has been updated, all the developer should get the pull from the main branch to get the newset version, to make sure their work is on the correct track.
 
+7. Repeate step 4-7 until the project is finished.
 
-
-
-
-
-
-
-
+1. https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow
+2. https://aws.amazon.com/devops/source-control/
 
 ## Qustion 2
 <!-- What are the most important aspects of quality software? -->
@@ -94,66 +92,81 @@ In MERN stack, MongoDB handle our database. MongoDB is a non-relational, documen
 ## Question 4
 <!-- A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project? -->
 
+When developing a website for a small business, the development team should consider following skills and knowledge of the team members:
+- Communication Skills
+When a team want work as a team, Communication skill is really important. And the communication skills should have effective communication skills both internal and external. Internal communication skills help teams communicate with each other effectively and collaboration. External communication skills help team communication with the client or the supplier, this help team understand the client need and get help or avoid some problems.
 
+- Product Management
+Improving the user experience, understanding the user needs and creating actual product have the same weight. The website team build is a product after all. So making the customer feels it is worth the price is very important. By use product manangement skills, product manager have to deeply dig the business need and get to know the clinet's version, and pass them to the team.
 
+- Design
+A good design skills help the team give the beeter user interface and user experience. No one would like the ungly website, or bad user experience. So team should have the design skill to make the UI looks better and UX feels better.
 
+- Accessibility for different platforms
+The website should be able to work well on different platforms, like mobile, browser, tablet or other platforms. So this will require the developer need have the knowledge for these platform. And test team should consire the accessibility as will
 
+- Security
+The security of the client data and the security of the servers is protect our client privacy. There will always be some risk on iternet, ,inimizing that risk is what’s the team should do.
 
+- Tech Stack
+There are multiple technology stacks that could be used to build a website for example: MERN stack. Basic on the requirements of client or the requirements of the product team could choise the suitable tec stack. The following knowledge is used on the basic website development:
+  - HTML
+  - CSS.
+  - Version-control like Git
+    Version-control system is really important for the team. To makesure all the deverloper work on their job.
+  - Database
+    Retrieve, create, read, edit, update and delete data in database. 
 
-
-
-
-
-
-
-
-
-
+1. https://ascendle.com/ideas/14-skills-your-app-development-team-must-have/
 
 ## Question 5
 <!-- With reference to one of your own projects, discuss what knowledge or skills were required to complete your project, and to overcome challenges -->
 
+One of the my own projects is develop a two side marketplace application by use ruby. Here is hte repository for [Tiny game store](https://github.com/sam-lee-py/T2A2_APP), this is my first ever full stack application build myself. The following knowledge or skills are used when I built it.
 
+Because "Tiny game store" is basicly an website application. So the basic knowlege that for the website is required:
+- HTML
+- CSS AND SCSS
 
+This application use rails as the framework. so the following skill if required for uses rails:
+- Ruby, rails is base on ruby language. So ruby is required.
+- Ruby on rails, Ruby on rails been used all the develop time.
+- PostgreSQL Database, rails application require a database. I choise PostgreSQL as the main database for "Tiny game store".
+- MVC Architecture pattern, Rails base on the MVC Architecture pattern, we cant write a good rails code without the knowledge of the MVC.
+- Routing, By understanding the 'GET', 'POST', 'PUT' and 'DELETE' these CURD operations, we could use the right way to direct my webpage.
 
+Becasue there are several features are already existing we can use 'GEMS' to easily use them instead write by yourself. When I work with the "Tiny game store", I found these gems are really useful.
+- Devise, everyone need an account, use Devise is easy to create the authentication like login, sign in and other things.
+- Stripe, This is my the first ever payment system. 
+- Webhook, Ultralhook used to listening the response from the stripte.
 
+By use the stripe and webhook I am try to build a simple payment system, and because stripe use Jquery and JavaScript like build session.
+- JavaScript
+- JSON
 
-
-
-
-
-
-
-
-
-
-
-
+And some other technologies used when I build the application:
+- Git and Github, helps to watching the changes and version control. Because this time only me work on this applicaiton, not much pull and branches issue.
+- Heroku, to publish the application.
+- Amazon S3, to storage the image files for the application
+- Trello, project management make sure it will finish on time.
+- Balsamiq, Balsamiq for the Wireframes design.
+- Lucidchart, Lucidchart for the ERD
 
 ## Question 6
 <!-- With reference to one of your own projects, evaluate how effective your knowledge and skills were for this project, and suggest changes or improvements for future projects of a similar nature. -->
 
+In question 5, I explain the skills and knowledge to implement and use in developing "Tiny Game Store". 
 
+This is the first time for me to use a 'framework' to develop an website, there are so many blocks and chanllenge during these time. But lucy we got a lot of the useful knowledege from the class, this give me more confidence to doing this project. For example, I learned the MVC architecture, this will let me much easily to read the code, and understand how the architecture works. And the "rails magic" allows me use less code to do more things.
+I ddefinitely need to increase the knowledge of use 'framework', some of the file in the applicaiton, I never touched, so next step i need to learn more about how to work with the framework.
 
+About the design, I always start with a really big dream, all the design is unrealistic. This make me restart the project several times, especially the ERD, database require precise definition, everytime when i try to restart, ERD will be one of the big block for me. So I need the cleary design for the whole project or website and staic on the plan.
 
+The next challenges for me is try to find out the correct way to achieve goals, Spend a lot of time to search and check. For example, I try to do a payment system then i fount Stripe. Then I find out stripe need "session" to pass the parameters, and it is the JavaScript logic. This push me to search and find out more programming knowledge. For the future improvements the search skill and learning speed is need to be improved.
 
+For the source control. Through this project I know how important it is, it's give you the freedom and safety feeling to do whatever you want, instead worried future. Like when i create one of the model is totally fail and i dont know where is the problem is. I could easily go back to check which lane is changed and easily find out the problem. Git skill need to improve.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+By use Heroku and Amazon S3, this make the website visible online. Even it's give me a lot of problem like hard to clear the DB in service side. 
 
 ## Question 7
 <!-- Explain control flow, using an example from the JavaScript programming language -->
